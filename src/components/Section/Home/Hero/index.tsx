@@ -1,13 +1,11 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { format } from "date-fns";
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Calendar } from '@/components/ui/calendar';
 import BackgroundImageHeroSection from './BackgroundImage';
-import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import { MyDatePicker } from '@/components/Calendar.tsx/MyDatePicker';
 
 const HeroSection = ({
     title,
@@ -22,7 +20,6 @@ const HeroSection = ({
     description:string
     imgUrl:string
 }) => {
-    const [date, setDate] = useState<Date | undefined>(new Date());
   return (
     <section className="relative">
         <BackgroundImageHeroSection 
@@ -48,25 +45,7 @@ const HeroSection = ({
                     className="bg-white/20 border-0 text-white placeholder:text-gray-300 h-12"
                 />
                 </div>
-                <Popover>
-                <PopoverTrigger asChild>
-                    <Button
-                    variant="outline"
-                    className="bg-white/20 border-white/30 text-white h-12 !rounded-button whitespace-nowrap"
-                    >
-                    {date ? format(date, "MMM dd, yyyy") : "Pick a date"}
-                    <FaCalendarAlt className='ml-2'/>
-                    </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                    <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    initialFocus
-                    />
-                </PopoverContent>
-                </Popover>
+                <MyDatePicker />
                 <Button className="h-12 bg-blue-600 hover:bg-blue-700 !rounded-button whitespace-nowrap dark:text-white">
                 Find Races
                 <FaSearch />
