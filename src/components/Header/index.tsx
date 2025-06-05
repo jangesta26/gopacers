@@ -6,8 +6,11 @@ import { ModeToggle } from '../Toggle/ModeToggle'
 import MobileMenuOpen from '../Sheet/MobileMenuOpen'
 import BrandLogo from '@/svg/BrandLogo'
 import HeaderItem from './HeaderItem'
+import { useRouter } from 'next/navigation'
 
 const Header = () => {
+    const router = useRouter();
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-800 shadow-sm">
     <div className="container mx-auto px-4 flex h-16 items-center justify-between">
@@ -25,7 +28,10 @@ const Header = () => {
         <div className="flex items-center gap-4">
             <div className="hidden md:flex gap-4">
                 <ModeToggle />
-                <Button className="whitespace-nowrap dark:text-white">
+                <Button 
+                onClick={() => router.push('/auth/login')}
+                className="whitespace-nowrap dark:text-white"
+                >
                     <CircleUserRound />
                     Sign In
                 </Button>

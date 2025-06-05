@@ -1,8 +1,6 @@
 'use client'
 import { poppins } from "@/lib/fonts";
 import '@/style/globals.css'
-import { ThemeProvider } from "@/context/ThemeProvider";
-import DefaultLayout from "@/components/Layout/DefaultLayout";
 import { useEffect, useState } from "react";
 import Loader from "@/components/Loader/Loader";
 import Head from "./head";
@@ -33,15 +31,9 @@ export default function RootLayout({
         {loading ? (
           <Loader />
         ) : (
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-          >
-            <DefaultLayout>
-              {children}
-            </DefaultLayout>
-        </ThemeProvider>
+          <>
+            {children}
+          </>
         )}
       </body>
     </html>

@@ -6,6 +6,7 @@ import BackgroundImageHeroSection from './BackgroundImage';
 import { FaArrowRight } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { MyDatePicker } from '@/components/Calendar.tsx/MyDatePicker';
+import { useRouter } from 'next/navigation';
 
 const HeroSection = ({
     title,
@@ -20,6 +21,7 @@ const HeroSection = ({
     description:string
     imgUrl:string
 }) => {
+    const router = useRouter();
   return (
     <section className="relative">
         <BackgroundImageHeroSection 
@@ -56,6 +58,7 @@ const HeroSection = ({
             <Button
             size="lg"
             className="bg-blue-600 hover:bg-blue-700 !rounded-button whitespace-nowrap dark:text-white"
+            onClick={() => router.push('/registration')}
             >
             Register Now
             <FaArrowRight />

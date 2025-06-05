@@ -8,7 +8,7 @@ export async function GET() {
       name: "Sarah Johnson",
       avatar:
         "https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20athletic%20female%20runner%20in%20her%2030s%2C%20natural%20lighting%2C%20neutral%20background%2C%20confident%20smile%2C%20casual%20athletic%20wear%2C%20summer%20outdoor%20setting&width=100&height=100&seq=15&orientation=squarish",
-      text: "The race calendar feature helped me plan my entire season. I&quot;ve discovered events I never knew existed and met amazing people along the way!",
+      text: "The race calendar feature helped me plan my entire season. I've discovered events I never knew existed and met amazing people along the way!",
       race: "Summer Marathon 2024",
     },
     {
