@@ -96,6 +96,7 @@ const RenderPaymentStep = ({
                   </div>
                 )}
 
+
                 {/* Merchandise summary */}
                 {Object.entries(formData.merchandise).some(
                   ([,item]) => item.quantity > 0,
